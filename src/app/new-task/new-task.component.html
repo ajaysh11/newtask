@@ -1,0 +1,81 @@
+
+ <div class="container">
+    <div class="row">
+        <h2 mat-dialog-title>New Task</h2>
+        <mat-dialog-actions>
+                    <form class="example-form">
+
+                        <div class="container">
+                            <div class="row">
+                        <div class="col-12">
+                            <mat-label>Task Content*</mat-label>
+                            <mat-form-field appearance="legacy" class="col-12 p-0">
+                            <input matInput placeholder="" [(ngModel)]="task" name="task" class="form-control">
+                            </mat-form-field>
+                        </div> 
+                        <div class="col-12">
+                            <mat-label>Due Date</mat-label>
+                            <div class="row">
+                                <div class="col"> 
+                                    <mat-form-field class="example-full-width" appearance="fill"> 
+                                        <input matInput [matDatepicker]="picker10" (dateInput)="onChangeEvent($event)">
+                                        <mat-datepicker-toggle matSuffix [for]="picker10"> 
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #picker10></mat-datepicker>
+                                      </mat-form-field>
+                                      
+                                </div>
+                                <div class="col"> 
+                                    <input [ngxTimepicker]="picker11">
+                                    <ngx-material-timepicker #picker11 (timeSet)="selectChanged($event)"></ngx-material-timepicker>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-12">
+                            <mat-label>Remainder</mat-label>
+                            <div class="row">
+                                <div class="col"> 
+                                    <mat-form-field class="example-full-width" appearance="fill"> 
+                                        <input matInput [matDatepicker]="picker20" (dateInput)="onChangeEvent1($event)">
+                                        <mat-datepicker-toggle matSuffix [for]="picker20"> 
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #picker20></mat-datepicker>
+                                      </mat-form-field>
+                                      
+                                </div>
+                                <div class="col"> 
+                                    <input  [ngxTimepicker]="picker21"   >
+                                    <ngx-material-timepicker #picker21 (timeSet)="selectChanged1($event)"></ngx-material-timepicker>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-12">
+                            <mat-label>Associated Contact</mat-label>
+                            <mat-form-field appearance="legacy" class="col-12 p-0">
+                            <input matInput placeholder="" [(ngModel)]="associated" name="associated" class="form-control">
+                            </mat-form-field>
+                        </div> 
+                        <div class="col-12">
+                            <mat-label>Owner</mat-label>
+                            <mat-form-field appearance="fill" class="col-12 p-0"> 
+                                <mat-select [(value)]="selected">
+                                  <mat-option>None</mat-option>
+                                  <mat-option value="Owner">Owner</mat-option>
+                                  <mat-option value="Owner2">Owner1</mat-option>
+                                  <mat-option value="Owner3">Owner3</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                        </div> 
+                    </div>
+            
+                </div>
+                <div class="col-12 p-3 mt-3 text-right" style="background-color: #e9e6e6;"> 
+                    <button mat-button class="create_cancel" mat-dialog-close>Cancel</button> 
+                    <button mat-button class="create" (click)="createtask()">Create</button>
+                </div>
+                    </form>
+            
+        </mat-dialog-actions>
+    </div>
+
+ </div>

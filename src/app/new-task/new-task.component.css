@@ -1,0 +1,13 @@
+.cdk-overlay-pane{
+    background-color: #000;
+    width: 250px;
+    height: 250px
+}
+.example-form-field {
+    margin-right: 20px;
+}
+.cdk-overlay-container{ 
+    z-index: auto;
+}
+
+

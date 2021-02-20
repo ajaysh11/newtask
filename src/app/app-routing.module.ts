@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { TaskComponent } from './task/task.component';
 
-const routes: Routes = [];
+const appRoutes: Routes = [{
+    path: '',
+      children: [
+            {
+                path: '',
+                component: TaskComponent
+            },
+            {
+                path: '**',
+                redirectTo: ''
+              }
+          ]
+        }
+]
+ 
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
